@@ -24,8 +24,8 @@ using namespace nvinfer1;
 #include "utils.h"
 
 struct OutputSeg {
-    int id;
-    float confidence;
+    int id{};
+    float confidence{};
     Rect box;
     Mat boxMask;
 };
@@ -37,7 +37,7 @@ int main(int argc, char **argv) {
     // 读取模型
     char* trtModelStream{ nullptr };
     size_t size{0};
-    std::ifstream file("/media/vigi/Elements/YOLOv5-seg/YOLOv5/Yolov5-instance-seg-tensorrt/models/yolov5s-seg.engine", std::ios::binary);
+    std::ifstream file("your model file", std::ios::binary);
     if (file.good()) {
         std::cout<<"load engine success"<<std::endl;
         file.seekg(0, file.end);
@@ -62,7 +62,7 @@ int main(int argc, char **argv) {
     assert(context != nullptr);
     delete[] trtModelStream;
 
-    const string img_path = "/home/vigi/Third_Paper/YOLOv5-seg-example/000000.png";
+    const string img_path = "./YOLOv5-seg-example/000000.png";
     Mat frame = imread(img_path, IMREAD_COLOR);
 
     vector<OutputSeg> outputs;
@@ -82,7 +82,6 @@ int main(int argc, char **argv) {
     coloredRoi.copyTo(mask_frame, mask);
     imshow("Segmentation Results", mask_frame);
     waitKey(0);
-
 
     return 0;
 }

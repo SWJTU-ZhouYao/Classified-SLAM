@@ -1,3 +1,0 @@
-/home/vigi/Third_Paper/YOLOv5-seg-example/cmake-build-debug/CMakeFiles/main.dir
-/home/vigi/Third_Paper/YOLOv5-seg-example/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/vigi/Third_Paper/YOLOv5-seg-example/cmake-build-debug/CMakeFiles/rebuild_cache.dir

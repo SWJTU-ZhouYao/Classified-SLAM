@@ -42,7 +42,6 @@ message(STATUS "opencv version" ${OpenCV_VERSION})
 include_directories(
         ${TENSORRT_INCLUDE_DIR}
         ${OpenCV_INCLUDE_DIRS}
-        "/usr/include/eigen3/"
 )
 add_executable(main main.cpp)
 target_link_libraries(main ${OpenCV_LIBS} ${TENSORRT_LIBRARY} cudart)
