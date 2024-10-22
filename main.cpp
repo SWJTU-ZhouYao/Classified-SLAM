@@ -34,7 +34,6 @@ void Segmentation_from_YoloV5_by_TRT(IExecutionContext& context, Mat& frame, vec
 void doInference(IExecutionContext& context, float* input, float* output, float* output1, int batchSize);
 
 int main(int argc, char **argv) {
-    // 读取模型
     char* trtModelStream{ nullptr };
     size_t size{0};
     std::ifstream file("your model file", std::ios::binary);
