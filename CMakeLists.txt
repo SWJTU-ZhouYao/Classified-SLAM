@@ -17,7 +17,7 @@ LIST(APPEND CUDA_NVCC_FLAGS -gencode arch=compute_86,code=sm_86) # match your co
 enable_language(CUDA)
 
 # TensorRT
-list(APPEND CMAKE_PREFIX_PATH "~/c++_packages/TensorRT-8.4.3.1")
+list(APPEND CMAKE_PREFIX_PATH "your trt file")
 find_path(TENSORRT_INCLUDE_DIR NvInfer.h
         HINTS ${TENSORRT_ROOT} ${CUDA_TOOLKIT_ROOT_DIR}
         PATH_SUFFIXES include)
